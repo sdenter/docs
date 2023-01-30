@@ -4,7 +4,7 @@
 
 The diagram below shows how this schematically behaves:
 
-![image](/.gitbook/assets/ajax-panel-abstract.svg)
+![image](../../../../../.gitbook/assets/ajax-panel-abstract.svg)
 
 ## Basic usage
 
@@ -58,12 +58,12 @@ One panel can influence another one by defining and linking to an id.
 
 The B2B Suite comes with a library of simple helper plugins to add behavior to the ajax panels.
 
-![image](/.gitbook/assets/ajax-panel-structure.svg)
+![image](../../../../../.gitbook/assets/ajax-panel-structure.svg)
 
 As you can see, there is the `AjaxPanelPluginLoader` responsible for initializing and reinitializing plugins inside b2b-panels.
 Let's take our last example and extend it with a form plugin:
 
-```html
+```twig
 <div
     class="b2b--ajax-panel"
     data-url="{{ path('frontend.b2b.b2bcontact.grid') }}"
@@ -81,7 +81,7 @@ While few of them add very specific behavior to the grid or tab's views, there a
 
 The `b2bAjaxPanelModal` plugin helps to open ajax panel content in a modal dialog box. Let's extend our initial example:
 
-```html
+```twig
 <div
     class="b2b--ajax-panel b2b-modal-panel"
     data-url="{{ path('frontend.b2b.b2bcontact.grid') }}"
@@ -99,7 +99,7 @@ Sometimes a change in one panel needs to trigger reload in another panel.
 This might be the case if you are editing in a dialog and displaying a grid behind it.
 In this case, you can just trigger reload on other panel id's, just like that:
 
-```html
+```twig
 <div class="b2b--ajax-panel" data-url="{{ path('frontend.b2b.b2bcontact.grid') }}" data-id="grid">
     <!-- grid -->
 </div>
@@ -114,7 +114,7 @@ Now every change in the form view will trigger reload in the grid view.
 ### TreeSelect
 
 This `TreeSelect` plugin allows to display a tree view with enabled drag and drop.
-In the view the `div` element needs the class `is--b2b-tree-select-container` and the data attribute `data-move-url="{{ path('frontend.b2b.b2brole.move') }}"`.
+In the view the `div` element needs the class `is--b2b-tree-select-container` and the data attribute <code v-pre>data-move-url="{{ path('frontend.b2b.b2brole.move') }}"</code>.
 The controller has to implement a move action, which accepts the `roleId`, `relatedRoleId`, and the `type`.
 
 Possible types:
