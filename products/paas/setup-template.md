@@ -45,7 +45,7 @@ Variables in the `env` section are automatically injected as environment variabl
 
 ### hooks
 
-Lifecycle hooks are custom scripts that are called during your build and deploy processes. See more on the [deployment process](./build-deploy.md#push-main-branch).
+Lifecycle hooks are custom scripts that are called during your build and deploy processes. See more on the [deployment process](./build-deploy#push-main-branch).
 
 #### build hook
 
@@ -55,9 +55,9 @@ You do not have access to any of the services configured, as the application is 
 
 #### deploy hook
 
-{% hint style="warning" %}
+::: warning
 The environment will be cut off from web traffic during the execution of the deploy hook. The shorter this script is, the shorter the downtime will be.
-{% endhint %}
+:::
 
 This script is called during the deployment process. Theme configuration is copied, the install scripts are executed and secrets are generated.
 
@@ -104,4 +104,4 @@ This file contains services that are used by the `app` instances. Depending on y
 
 ## [files / theme-config](https://github.com/shopware/recipes/tree/main/shopware/paas-meta/6.4/files/theme-config)
 
-We suggest checking in your theme configuration to version control in this directory. Read more on the concept of [builds without database](../../guides/hosting/installation-updates/deployments/build-w-o-db.md) as described in [Theme Build](./theme-build.md).
+We suggest checking in your theme configuration to version control in this directory. Read more on the concept of [builds without database](../../guides/hosting/installation-updates/deployments/build-w-o-db) as described in [Theme Build](./theme-build).

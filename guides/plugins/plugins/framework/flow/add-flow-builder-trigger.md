@@ -1,8 +1,8 @@
 # Add customer flow action
 
-{% hint style="info" %}
+::: info
   This functionality is available starting with Shopware 6.4.6.0
-{% endhint %}
+:::
 
 ## Overview
 
@@ -10,14 +10,14 @@ In this guide, you'll learn how to create a custom flow trigger in Shopware. Tri
 
 ## Prerequisites
 
-In order to add your own custom flow trigger for your plugin, you first need a plugin as base. Therefore, you can refer to the [Plugin Base Guide](../../plugin-base-guide.md).
+In order to add your own custom flow trigger for your plugin, you first need a plugin as base. Therefore, you can refer to the [Plugin Base Guide](../../plugin-base-guide).
 
-You also should be familiar with [Add custom event](../event/add-custom-event.md) to know how to create an event. Please refer to the [Flow Builder concept](../../../../../concepts/framework/flow-concept.md)
+You also should be familiar with [Add custom event](../event/add-custom-event) to know how to create an event. Please refer to the [Flow Builder concept](../../../../../concepts/framework/flow-concept)
 for better integration later.
 
 ## Existing triggers and actions
 
-You can refer to the [Flow reference](../../../../../resources/references/core-reference/flow-reference.md) to read triggers and actions detail.
+You can refer to the [Flow reference](../../../../../resources/references/core-reference/flow-reference) to read triggers and actions detail.
 
 ## Event interfaces and classes
 
@@ -35,7 +35,7 @@ Any event that implements one of these interfaces will be available in the trigg
 
 ## Create custom flow trigger
 
-To create a custom flow trigger, firstly you have to create a plugin and install it, you can refer to the [Plugin Base Guide](../../plugin-base-guide.md) to do it. I will create a plugin named `ExamplePlugin`. There will be an example to actually show your new trigger in the administration.
+To create a custom flow trigger, firstly you have to create a plugin and install it, you can refer to the [Plugin Base Guide](../../plugin-base-guide) to do it. I will create a plugin named `ExamplePlugin`. There will be an example to actually show your new trigger in the administration.
 
 ### Create a new trigger (event)
 
@@ -45,9 +45,8 @@ Currently, you will need to also implement `Shopware\Core\Framework\Event\Busine
 
 Below you can find an example implementation:
 
-{% code title="<plugin root>/src/Core/Checkout/Customer/Event/ExampleEvent.php" %}
-
 ```php
+// <plugin root>/src/Core/Checkout/Customer/Event/ExampleEvent.php
 <?php declare(strict_types=1);
 
 namespace Swag\ExamplePlugin\Core\Checkout\Customer\Event;
@@ -103,11 +102,9 @@ class ExampleEvent extends Event implements CustomerAware, BusinessEventInterfac
 }
 ```
 
-{% endcode %}
-
-{% hint style="info" %}
+::: info
   Available starting with Shopware 6.5.0.0
-{% endhint %}
+:::
 
 From 6.5, in Flow Builder, the original event will be deprecated and we will only use a class `StorableFlow`. All event data will be stored in the `StorableFlow`, hence the `getAvailableData` function can no more be used to get data from the Flow Builder.
 
@@ -335,15 +332,14 @@ class SendMailAction
 }
 ```
 
-Take a look at the [Add Flow Builder Action](/guides/plugins/plugins/framework/flow/add-flow-builder-action.md) section of the guide for how to use data in Flow Actions.
+Take a look at the [Add Flow Builder Action](/guides/plugins/plugins/framework/flow/add-flow-builder-action) section of the guide for how to use data in Flow Actions.
 
 ### Add your new event to the flow trigger list
 
  At this step you need to add your new event to the flow trigger list, let see the code below:
 
-{% code title="<plugin root>/src/Core/Checkout/Customer/Subscriber/BusinessEventCollectorSubscriber.php" %}
-
 ```php
+// <plugin root>/src/Core/Checkout/Customer/Subscriber/BusinessEventCollectorSubscriber.php
 <?php declare(strict_types=1);
 
 namespace Swag\ExamplePlugin\Core\Checkout\Customer\Subscriber;
@@ -383,13 +379,10 @@ class BusinessEventCollectorSubscriber implements EventSubscriberInterface
 }
 ```
 
-{% endcode %}
-
 Please note that your subscriber has to have a higher priority point to ensure your event is added before any subscriber `BusinessEventCollectorEvent` to prevent missing awareness or action. I set 1000 for `onAddExampleEvent` action:
 
-{% code title="<plugin root>/src/Core/Checkout/Customer/Subscriber/BusinessEventCollectorSubscriber.php" %}
-
 ```php
+// <plugin root>/src/Core/Checkout/Customer/Subscriber/BusinessEventCollectorSubscriber.php
 public static function getSubscribedEvents()
 {
    return [
@@ -398,20 +391,15 @@ public static function getSubscribedEvents()
 }
 ```
 
-{% endcode %}
-
 And don't forget to register your subscriber to the container at `<plugin root>/src/Resources/config/services.xml`
 
-{% code title="<plugin root>/src/Resources/config/services.xml" %}
-
 ```xml
+// <plugin root>/src/Resources/config/services.xml
 <service id="Swag\ExamplePlugin\Core\Checkout\Customer\Subscriber\BusinessEventCollectorSubscriber">
     <argument type="service" id="Shopware\Core\Framework\Event\BusinessEventCollector"/>
     <tag name="kernel.event_subscriber"/>
 </service>
 ```
-
-{% endcode %}
 
 Well done, you have successfully created your own flow trigger.
 
