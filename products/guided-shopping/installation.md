@@ -1,3 +1,10 @@
+---
+nav:
+  title: Guided Shopping installation
+  position: 10
+
+---
+
 # Guided Shopping Installation
 
 ::: warning

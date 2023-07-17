@@ -1,3 +1,10 @@
+---
+nav:
+  title: B2B Suite
+  position: 10
+
+---
+
 # Extensions
 
 Shopware provides some unique out-of-the-box extensions:

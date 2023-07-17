@@ -1,3 +1,10 @@
+---
+nav:
+  title: Security
+  position: 10
+
+---
+
 # Product Security
 
 This guide presents a comprehensive compilation of all security measures implemented in the product, along with instructions on how to configure them.
