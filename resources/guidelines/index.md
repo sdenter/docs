@@ -4,12 +4,12 @@ This document is intended for all readers and contributors. We have defined codi
 
 The code section lays out the coding standards. This helps anyone understand and modify the code at any point while keeping the code consistent.
 
-{% page-ref page="./code/README.md" %}
+<PageRef page="./code/" />
 
 The test section briefs you about best practices for writing end-to-end tests.
 
-{% page-ref page="./testing/README.md" %}
+<PageRef page="./testing/" />
 
 The document section details you on the language style, grammar, markdown syntax, and documentation process.
 
-{% page-ref page="./documentation-guidelines/README.md" %}
+<PageRef page="./documentation-guidelines/" />

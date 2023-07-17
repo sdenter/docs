@@ -4,12 +4,12 @@ The data handling, or the Data Abstraction Layer \(DAL\), can be an overwhelming
 
 Hence, here are some good starting topics:
 
-{% page-ref page="add-custom-complex-data.md" %}
+<PageRef page="add-custom-complex-data" />
 
-{% page-ref page="reading-data.md" %}
+<PageRef page="reading-data" />
 
-{% page-ref page="writing-data.md" %}
+<PageRef page="writing-data" />
 
 Also, listening to events of the DAL will come in handy for sure, so here's that:
 
-{% page-ref page="using-database-events.md" %}
+<PageRef page="using-database-events" />

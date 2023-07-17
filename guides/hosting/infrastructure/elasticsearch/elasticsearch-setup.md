@@ -4,7 +4,7 @@
 
 As soon as several thousand data sets are used in a project, it makes sense to deal with Elasticsearch. The Elasticsearch integration for Shopware is in the [shopware/elasticsearch](https://github.com/shopware/elasticsearch) bundle. If this is not available in your project, you can simply add it via `composer require shopware/elasticsearch`. In this documentation, we will provide you with a short overview of the functionalities of Elasticsearch on your server and the configuration, activation, and indexing process in Shopware for live and test environments.
 
-{% hint style="info" %} Currently, the implementation for Elasticsearch/Opensearch works in the same way. {% endhint %}
+::: info Currently, the implementation for Elasticsearch/Opensearch works in the same way. :::
 
 ## Requirements
 
@@ -119,11 +119,11 @@ SHOPWARE_ES_THROW_EXCEPTION=1
 
 Shopware will use by default 3 shards and 3 replicas for the created index. This configuration can be overwritten with a new config file in `config/packages/elasticsearch.yml`
 
-{% hint style="info" %}
+::: info
 This configuration is available since Shopware version 6.4.12.0
-{% endhint %}
+:::
 
-```yml
+```yaml
 elasticsearch:
   index_settings:
     number_of_shards: 1
@@ -186,6 +186,6 @@ bin/console es:admin:reset
 bin/console es:admin:test
 ```
 
-{% hint style="info" %}
+::: info
 Advanced admin users can refer to [elasticsearch reference guide](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-simple-query-string-query.html) for complex search queries.
-{% endhint %}
+:::
