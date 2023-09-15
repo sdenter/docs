@@ -54,6 +54,7 @@ We always test with the [actual SW6 version](https://www.shopware.com/de/downloa
 
 ### Useful links and tutorials for creating an app
 
+* [Github FAQ for app development](https://github.com/shopware/platform/discussions/categories/app-faq)
 * [Sample app development template](https://github.com/shopwareLabs/AppExample)
 * [App base guide](https://developer.shopware.com/docs/guides/plugins/apps/app-base-guide)
 * [Storefront](https://developer.shopware.com/docs/guides/plugins/apps/storefront)
