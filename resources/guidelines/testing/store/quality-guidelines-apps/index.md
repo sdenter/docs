@@ -5,7 +5,7 @@ nav:
 
 ---
 
-# Quality Guidelines for Apps and Themes based on App System in Shopware Store
+# Quality guidelines for the app system in the Shopware store
 
 > **Changelog**
 >> 27/09/23: [Added - Identical name rule](#every-app-based-on-the-app-system)
