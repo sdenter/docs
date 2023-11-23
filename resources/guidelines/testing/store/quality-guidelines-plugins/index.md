@@ -8,6 +8,8 @@ nav:
 # Quality Guidelines for the Plugin System in the Shopware Store
 
 > **Changelog**
+>> 23/11/23: [Added - New rules for Checklist for app testing](../quality-guidelines-plugins/#every-app-based-on-the-plugin-system)
+> 
 >> 26/07/23: [Added - Identical name rule](../quality-guidelines-plugins/#every-app-based-on-the-plugin-system)
 >
 >> 06/09/23: [Added - Rules for own composer dependencies](../quality-guidelines-plugins/#own-composer-dependencies)
