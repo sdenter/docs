@@ -24,11 +24,6 @@ This ensures the quickest way for your app to be published.
 
 We perform the *first test*, and if successful, we do the *follow-up test* again with the most current Shopware version.
 
-The Shopware installation is located in a subfolder.
-It has a language sub-shop/sales channel with a virtual URL as well as an independent sub-shop/sales channel with its own URL, also located in a subfolder.
-E.g. `myshop.com/public/admin`.
-The app must neither produce any error messages in the administration nor in the frontend.
-
 The app is tested with the latest official Shopware 6 CE Version.
 
 ::: info
